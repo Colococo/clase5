@@ -1,0 +1,24 @@
+/* reglas @import: para importar, aca importamos una fuente de google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/*imoporto el icono de font awesome*/
+@import url(./assets/css/all.css);
+
+/* fon-face: descargo una fuente de fon-google y le creo un nombre */
+@font-face {
+  font-family: 'fuenteJorge';/*le pongo un nombre*/
+  src: url(./assets/fonts/RubikWetPaint-Regular.ttf);
+}
+
+/* regla layer: para separa el contenido*/
+@layer cotainers{
+  h2 ~ p {
+    font-family: "Roboto", sans-serif;/*Roboto: la importamos de google font @import url()*/
+    color: red;
+  }
+}
+
+.rubik__font{
+  /*@font-face: estoy poniendo la fuente creada y sin serifa */
+  font-family: 'fuenteJorge', sans-serif;
+}
