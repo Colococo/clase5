@@ -55,6 +55,21 @@ html {
   color: var(--variableColor);
   font-family: var(--base-font);
   font-size: var(--font-display);
+  padding: 10px;
+  background-color: white;
+}
+
+.divParrafo{
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+}
+
+
+.divVariable{
+  background-color: blanchedalmond;
+  /* width: 410px; */
+  display: inline-block; /* Permite que el div se ajuste al contenido */
 }
 
 /* fon-face: descargo una fuente de fon-google y le creo un nombre */
