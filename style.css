@@ -1,8 +1,61 @@
-/* reglas @import: para importar, aca importamos una fuente de google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/*  NORMALIZACION INICIAL DE ESTILOS: para quitar los estilos por defecto
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; sirve para que las cajas no agreguen espacios por fuera los agrega dentro
+} 
+
+html {
+  font-size: 62.5%; llevamos a la medida de la fuente a 10px para convertir mas facil los px a em: medida recomendada, entonces 18 px pasan a ser 1.8em
+}
+
+a {
+  text-decoration: none;
+  font-size: 2em;
+  color: #111111;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+p {
+  font-size: 1.8em
+}
+*/
 
 /*imoporto el icono de font awesome*/
 @import url(./assets/css/all.css);
+
+/* reglas @import: para importar, aca importamos una fuente de google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* creando  variables CSS */
+:root {
+  /* palete */
+  --variableColor: blue;
+  /* typography */
+  --base-font: 'Pacifico', cursive;
+  /* font-sizes usar em*/
+  --font-display: 2em; /* 80px */
+  /* spacings usar rem*/
+  --spacing-128: 12.8rem; /* los rem valen lo mismo que los em, pero nunca se modifican, los em en algunos casos suelen ajustarse */
+}
+
+/* convertimos la medida estandar 1em = 10px */
+html {
+  font-size: 62.5%;
+}
+
+/* usando variable CSS en la class="variableCSS"*/
+.variableCSS{
+  color: var(--variableColor);
+  font-family: var(--base-font);
+  font-size: var(--font-display);
+}
 
 /* fon-face: descargo una fuente de fon-google y le creo un nombre */
 @font-face {
@@ -11,22 +64,26 @@
 }
 
 /* regla layer: para separa el contenido*/
-@layer cotainers {
+@layer containers {
   h2 ~ p {
     font-family: "Roboto", sans-serif; /*Roboto: la importamos de google font @import url()*/
     color: red;
+    font-size: 2em;
   }
 }
 
 .rubik__font {
   /*@font-face: estoy poniendo la fuente creada y sin serifa */
   font-family: "fuenteJorge", sans-serif;
+  font-size: 2em;
 }
 
 .burbuja {
   width: 220px;
   line-height: 1.3; /* Espaciado entre líneas */
+  font-family: var(--base-font); /* usando variable para la fuente */
   height: 4em; /* Altura para tres líneas de texto */
+  font-size: 2em;
   border: 2px solid black;
   border-radius: 10px;
   padding: 0;
@@ -40,3 +97,4 @@
   color: white;
   padding: 2px 6px 2px 10px;
 }
+
